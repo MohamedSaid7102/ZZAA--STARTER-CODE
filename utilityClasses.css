@@ -1,0 +1,77 @@
+/* Style Utility */
+/* ⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠ */
+/* ⚠⚠⚠⚠ TODO: Move the :root to the top of your style 👀 ⚠⚠⚠⚠*/
+/* ⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠ */
+:root {
+  --screen-max-width: 1140px;
+  --block-vertical-space: 5rem;
+}
+
+.block-container {
+  max-width: var(--screen-max-width);
+  margin: var(--block-vertical-space) auto; /* To center it */
+}
+
+.block--dark {
+  background-color: #222831;
+}
+
+.block--dark h1,
+.block--dark h2,
+.block--dark h3,
+.block--dark h4,
+.block--dark h5 {
+  color: #eee;
+}
+
+.block--dark p {
+  color: #bbb;
+}
+
+.bg--white {
+  background-color: #fff;
+}
+
+.txt--dark {
+  color: #333;
+}
+
+.shdow--light {
+  box-shadow: 0 3px 5px lightgray;
+}
+
+/* Layout Utility */
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row {
+  flex-flow: row wrap;
+}
+
+.flex-column {
+  flex-flow: column wrap;
+}
+
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+
+.gapX1 {
+  gap: 1rem;
+}
+
+.gapX2 {
+  gap: 2rem;
+}
+
+.gapX3 {
+  gap: 3rem;
+}
+
+.gapX10 {
+  gap: 10rem;
+}
