@@ -6,6 +6,7 @@
   --base-font-size: 16px;
   --mobile-font-size: 16px;
   --place-holder-clr: gray;
+  --outline-color: red;
 }
 
 ::placeholder {
@@ -98,6 +99,17 @@ body {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+
+/* To make outline abit more clean */
+/* It's not a good idea to set outline: none, Accessability will be lost on high contrast mode in windows,
+because this mode override things like borders, background colors and box shadows,
+and A lot of custom focus styles are reliant on using these three properties and hiding the outline.
+Check this article for more: https://www.nicchan.me/blog/tips-for-focus-styles/*/
+a:focus,
+a:focus-visible {
+  outline: 0.25rem dashed var(--outline-color, red);
+  outline-offset: 1rem;
 }
 
 /* Make images easier to work with */
