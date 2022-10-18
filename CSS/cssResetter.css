@@ -12,7 +12,7 @@
   --_ttype_squish: cubic-bezier(0.86, -0.1, 0.27, 1.15);
 
   /* light color scheme */
-  --bg--light: 210 24% 84%;
+  --bg--light: 250 60% 98%;
   --txt--light: 216 23% 23%;
   --primary--light: 214 32% 91%;
   --secondary--light: 195 33% 98%;
@@ -32,6 +32,10 @@
   --selection-txt-dark: 0 0% 0%;
   --outline-color-dark: 206 100% 96%;
   --placeholder-dark: 0 0% 79%;
+
+  /** Other important stuff for dark mode */
+  --media-brightness-dark: 0.8;
+  --media-contrast-dark: 1.2;
 }
 
 /* Theming Start*/
@@ -49,6 +53,11 @@
     --placeholder: var(--placeholder-light);
     color-scheme: light;
   }
+  img,
+  video,
+  picture {
+    filter: brightness(1) contrast(1);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,6 +73,12 @@
     --outline: var(--outline-color-dark);
     --placeholder: var(--placeholder-dark);
     color-scheme: dark;
+  }
+  img,
+  video,
+  picture {
+    filter: brightness(var(--media-brightness-dark))
+      contrast(var(--media-contrast-dark));
   }
 }
 
@@ -94,6 +109,21 @@
   --placeholder: var(--placeholder-dark);
   color-scheme: dark;
 }
+
+/* lower the brightness of images and videos in darkmood, to make it more comfortable to user eyes */
+:root[data-theme='dark'] img,
+:root[data-theme='dark'] video,
+:root[data-theme='dark'] picture {
+  filter: brightness(var(--media-brightness-dark))
+    contrast(var(--media-contrast-dark));
+}
+
+:root[data-theme='light'] img,
+:root[data-theme='light'] video,
+:root[data-theme='light'] picture {
+  filter: brightness(1) contrast(1);
+}
+
 /* Theming End*/
 
 ::placeholder {
